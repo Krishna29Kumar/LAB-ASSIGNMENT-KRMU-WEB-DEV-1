@@ -1,0 +1,220 @@
+/* ---------------- FULL SITE ---------------- */
+:root {
+    --primary: #0d7cc9;
+    --secondary: #ffb300;
+    --dark: #222;
+    --light: #f9f9f9;
+    --border: #ddd;
+    --font: "Poppins", Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font);
+    background: var(--light);
+    color: var(--dark);
+}
+
+/* ---------------- HEADER ---------------- */
+header {
+    background: white;
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+header h1 {
+    margin: 0;
+    color: var(--primary);
+}
+
+nav a {
+    margin-left: 1rem;
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: var(--primary);
+}
+
+/* ---------------- HERO ---------------- */
+.hero {
+    background: url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e") center/cover no-repeat;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: black;
+    padding: 1rem;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    margin: 0;
+    text-shadow: 0 3px 8px rgba(0,0,0,0.6);
+}
+
+.hero p {
+    font-size: 1.2rem;
+}
+/* HERO POP-IN ANIMATION */
+.hero-content {
+    opacity: 0;
+    transform: translateY(25px) scale(0.95);
+    animation: heroPop 1s ease-out forwards;
+}
+
+@keyframes heroPop {
+    0% {
+        opacity: 0;
+        transform: translateY(25px) scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* CENTER REVIEWS */
+.review-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    gap: 2rem;
+    text-align: center;
+}
+
+
+/* ---------------- TOURS SECTION ---------------- */
+section {
+    padding: 3rem 2rem;
+}
+
+.tour-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 2rem;
+}
+
+.tour-card {
+    background: white;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.tour-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    background-color: beige;
+    color: black;
+}
+
+.tour-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.tour-card .content {
+    padding: 1rem;
+}
+
+.tour-card h4 {
+    margin: 0.5rem 0;
+}
+
+.price {
+    color: var(--primary);
+    font-weight: bold;
+}
+
+/* ---------------- ITINERARY SECTION ---------------- */
+.itinerary {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 2rem;
+    max-width: 900px;
+    margin: auto;
+}
+
+.itinerary ol {
+    padding-left: 1.2rem;
+}
+
+/* ---------------- REVIEWS ---------------- */
+.reviews {
+    background: var(--primary);
+    color: white;
+    padding: 3rem 2rem;
+}
+
+.review-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+.review {
+    background: rgba(255,255,255,0.15);
+    padding: 1.5rem;
+    border-radius: 10px;
+    font-style: italic;
+}
+
+/* ---------------- INQUIRY FORM ---------------- */
+form {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 2rem;
+    max-width: 700px;
+    margin: 2rem auto;
+}
+
+form input, form textarea, form select {
+    width: 100%;
+    padding: 0.8rem;
+    margin: 0.6rem 0;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    font-family: var(--font);
+}
+
+button {
+    padding: 0.8rem 1.2rem;
+    border: none;
+    background: var(--primary);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+button:hover {
+    background: #095a91;
+}
+
+/* ---------------- FOOTER ---------------- */
+footer {
+    background: var(--dark);
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+@media (max-width: 780px) {
+    .hero h2 { font-size: 2rem; }
+}
